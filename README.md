@@ -25,18 +25,28 @@ php api/yii migrate --interactive=0 \
 ## Modifications
 
 1. Change lines 106-108 of hosannahighertech/yii2-oauth2-server/Module.php from
- |            foreach(array_keys($this->storageMap) as $name) {
- |                $storages[$name] = \Yii::$container->get($name);
- |            }
+
+```
+foreach(array_keys($this->storageMap) as $name) {
+    $storages[$name] = \Yii::$container->get($name);
+}
+```
+
 to
- |            foreach ($this->storageMap as $name => $class) { 
- |                $storages[$name] = \Yii::$container->get($class);
- |            }
+
+```
+foreach ($this->storageMap as $name => $class) { 
+    $storages[$name] = \Yii::$container->get($class);
+}
+```
 
 2. Change line 81 of yii\base\ActionFilter.php to add test before $this->owner->on:
- | if ($this->owner) {
- |     $this->owner->on(Controller::EVENT_AFTER_ACTION, [$this, 'afterFilter'], null, false);
- | } 
+
+```
+if ($this->owner) {
+    $this->owner->on(Controller::EVENT_AFTER_ACTION, [$this, 'afterFilter'], null, false);
+} 
+```
 
 ## Structure
 ```
