@@ -1,15 +1,15 @@
 {
-  "name": "ikaras/yii2-oauth2-rest-template",
+  "name": "tsmotta/yii2-oauth2-rest-template",
   "description": "Yii2 Rest APi Template with OAuth2 (fully configured filsh/yii2-oauth2-server extension)",
   "keywords": ["yii2", "rest", "oauth2", "application template", "api"],
-  "homepage": "https://github.com/ikaras/yii2-oauth2-rest-template",
+  "homepage": "https://github.com/tsmotta/yii2-oauth2-rest-template",
   "type": "project",
   "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
     {
-      "name": "Ihor Karas",
-      "email": "ihor@karas.in.ua"
+      "name": "Thiago S Motta",
+      "email": ""
     }
   ],
   "support": {
@@ -19,14 +19,14 @@
   "require": {
     "php": ">=5.4.0",
     "yiisoft/yii2": "*",
-    "filsh/yii2-oauth2-server": "2.0.0"
+    "hosannahighertech/yii2-oauth2-server": "1.0.*"
   },
   "extra": {
     "writable": [
-      "application/api/runtime"
+      "api/runtime"
     ],
     "executable": [
-      "application/api/yii"
+      "api/yii"
     ]
   }
 }
