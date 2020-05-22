@@ -6,7 +6,7 @@ $config = [
     'version' => "0.0.1",
     'basePath' => dirname(__DIR__),
     'timeZone' => 'America/Sao_Paulo',
-    'vendorPath' => YII_ENV == 'dev' ? dirname(__DIR__) . '/miaula/vendor' : '',
+    'vendorPath' => YII_ENV == 'dev' ? dirname(__DIR__) . '/../vendor' : '',
     'bootstrap' => ['log', 'oauth2'],
     'modules' => [
         'oauth2' => [

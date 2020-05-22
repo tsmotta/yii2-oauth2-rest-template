@@ -17,30 +17,14 @@ Clone or fork the repo
 3. Run migrations
 ```
 php api/yii migrate --migrationPath=@yii/rbac/migrations --interactive=0 \
-php api/yii migrate --migrationPath=@vendor/filsh/yii2-oauth2-server/migrations --interactive=0 \
+php api/yii migrate --migrationPath=@vendor/hosannahighertech/yii2-oauth2-server/migrations --interactive=0 \
 php api/yii migrate --interactive=0 \
 php api/yii migrate --interactive=0 \
 ```
 
 ## Modifications
 
-1. Change lines 106-108 of hosannahighertech/yii2-oauth2-server/Module.php from
-
-```
-foreach(array_keys($this->storageMap) as $name) {
-    $storages[$name] = \Yii::$container->get($name);
-}
-```
-
-to
-
-```
-foreach ($this->storageMap as $name => $class) { 
-    $storages[$name] = \Yii::$container->get($class);
-}
-```
-
-2. Change line 81 of yii\base\ActionFilter.php to add test before $this->owner->on:
+1. Change line 81 of yii\base\ActionFilter.php to add test before $this->owner->on:
 
 ```
 if ($this->owner) {
