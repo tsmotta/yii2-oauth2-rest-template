@@ -18,13 +18,14 @@ return [
                         'GET protected' => 'protected',
                     ],
                 ],
-            ]
+            ],
         ],
         'request' => [
+            'enableCookieValidation' => false,
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
-            ]
-        ],
+                ]
+            ],
         'response' => [
             'class' => 'yii\web\Response',
             'formatters' => [

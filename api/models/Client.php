@@ -16,7 +16,7 @@ class Client extends ActiveRecord implements \OAuth2\Storage\ClientCredentialsIn
      */
     public static function tableName()
     {
-        return '{{%clients}}';
+        return '{{%oauth_clients}}';
     }
     
     /**
@@ -42,6 +42,23 @@ class Client extends ActiveRecord implements \OAuth2\Storage\ClientCredentialsIn
             "user_id"      => $client->user_id,           // OPTIONAL the user identifier associated with this client
             "scope"        => $client->scope,             // OPTIONAL the scopes allowed for this client
         ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getStoreId()
+    {
+        if (isset($_GET['sid'])) {
+            return intval($_GET['sid']);
+        } 
+        elseif (!$this->isGuest) {
+            $user = self::findOne($this->id);
+            if (!empty($user->store_id)) {
+                return $user->store_id;
+            }
+        }
+        return 0;
     }
 
     /**

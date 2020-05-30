@@ -1,17 +1,14 @@
 <?php
 
 /**
- * Parents controller for all ones
+ * Parents active controller for all ones
  *
- * @author Ihor Karas <ihor@karas.in.ua>
- * Date: 03.04.15
- * Time: 00:29
+ * @author Thiago
  */
 
 namespace api\components;
 
 class ActiveController extends \yii\rest\ActiveController
 {
-
     use \api\components\traits\ControllersCommonTrait;
 }

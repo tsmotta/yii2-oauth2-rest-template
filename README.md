@@ -21,6 +21,11 @@ php api/yii migrate --migrationPath=@vendor/hosannahighertech/yii2-oauth2-server
 php api/yii migrate --interactive=0 \
 php api/yii migrate --interactive=0 \
 ```
+4. Change public and private keys on api/components/keys (optional for testing only)
+```
+openssl genrsa -des3 -out privkey.pem 2048```
+openssl rsa -in privkey.pem -outform PEM -pubout -out pubkey.pem```
+```
 
 ## Modifications
 
